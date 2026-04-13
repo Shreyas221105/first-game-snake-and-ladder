@@ -1,0 +1,140 @@
+:root {
+  color-scheme: light;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  background: #f4f1e8;
+  color: #1f1f1f;
+  --panel-bg: #fffaf0;
+  --panel-border: #d7d0c0;
+  --accent: #2f6b3a;
+  --accent-dark: #1d4424;
+  --food: #c85a3d;
+  --cell: #ece4d3;
+  --text-muted: #5c564c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f7f2e8 0%, #efe5cf 100%);
+}
+
+.app {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.panel {
+  width: min(100%, 520px);
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 18px 40px rgba(74, 56, 27, 0.12);
+}
+
+.panel__header,
+.status,
+.controls__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.panel__actions {
+  display: flex;
+  gap: 8px;
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.status {
+  flex-wrap: wrap;
+  margin: 18px 0 14px;
+  color: var(--text-muted);
+}
+
+.status p {
+  margin: 0;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(16, minmax(0, 1fr));
+  gap: 4px;
+  padding: 10px;
+  background: #dcd1bb;
+  border-radius: 12px;
+  border: 1px solid #c5b99f;
+}
+
+.cell {
+  aspect-ratio: 1;
+  border-radius: 4px;
+  background: var(--cell);
+}
+
+.cell--snake {
+  background: var(--accent);
+}
+
+.cell--head {
+  background: var(--accent-dark);
+}
+
+.cell--food {
+  background: var(--food);
+}
+
+.controls {
+  margin-top: 18px;
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+}
+
+.button {
+  appearance: none;
+  border: 1px solid #b5ab96;
+  border-radius: 999px;
+  background: #f9f4e9;
+  color: #28251f;
+  padding: 10px 16px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #f0e8d8;
+}
+
+.button--control {
+  min-width: 78px;
+}
+
+@media (max-width: 560px) {
+  .panel {
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+}
